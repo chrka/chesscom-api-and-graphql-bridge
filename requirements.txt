@@ -1,0 +1,5 @@
+# Requirements for running the GraphQL bridge
+requests
+flask
+graphene
+Flask-GraphQL

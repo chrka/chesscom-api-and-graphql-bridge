@@ -10,6 +10,8 @@ Since this was written as a quick demo, it does not support everything in the AP
 
 ## Installation
 
+If you just want to try out the GraphQL bridge it is easiest to use [Docker][Docker]. To do that follow the instructions in the next section, otherwise, if you want to use Python, keep reading.
+
 Since this written mainly as a proof-of-concept, I haven't put any effort in packaging this up, so for now, just clone the repository, install requirements per below, and (if needed) add the directory to your `$PYTHONPATH`.
 
 It needs at least Python 3.6 (eg., from the [Anaconda][Anaconda] distribution).
@@ -45,7 +47,19 @@ pip install graphene Flask-GraphQL
 
 ## Usage
 
-### Running the GraphQL bridge
+### Running the GraphQL bridge using Docker
+
+Assuming you have installed [Docker][Docker] on your computer, it should be enough to run:
+
+```
+docker run -p 5000:5000 chrka/chesscom-graphqlbridge:v0.1.0
+```
+
+Now the GraphiQL environment should be available in your browser [here](http://127.0.0.1:5000/graphql):
+![GraphiQL](graphiql.png)
+
+
+### Running the GraphQL bridge in Python
 
 ```
 # Make sure the chesscom and cqlbridge packages are available
@@ -265,3 +279,4 @@ enum Title {
 [Flask]: http://flask.pocoo.org
 [FlaskGraphQL]: https://github.com/graphql-python/flask-graphql
 [Anaconda]: https://www.anaconda.com
+[Docker]: https://www.docker.com

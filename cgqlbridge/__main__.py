@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 from flask_graphql import GraphQLView
 from .schema import schema
@@ -13,4 +14,7 @@ app.add_url_rule(
     )
 )
 
-app.run()
+if os.getenv('EXPOSE_GRAPHQL_BRIDGE', 'NO') == 'YES':
+    app.run(host='0.0.0.0', port=5000)
+else:
+    app.run(port=5000)
