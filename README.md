@@ -86,7 +86,7 @@ python example.py chess-com-developer-community
 
 **`lookup_club(key)`**: Returns a `Club` object for the club with the given key (case-insensitive). (The key is the last component of the Club's URL. Eg., The key for the _Chess.com Developer Community_-club with URL `https://www.chess.com/club/chess-com-developer-community´ is `chess-com-developer-community`.)
 
-**`lookup_club(code)`**: Returns a `Country` object for the country with  the given 2-character ISO 3166 code (upper-case).
+**`lookup_country(code)`**: Returns a `Country` object for the country with  the given 2-character ISO 3166 code (upper-case).
 
 
 ### Notes
