@@ -2,6 +2,10 @@ import requests
 from urllib.parse import urlparse
 import posixpath
 
+import logging
+
+logger = logging.getLogger(__name__)
+
 BASE_URL = "https://api.chess.com/pub/"
 
 
@@ -10,8 +14,7 @@ def request_json(endpoint: str) -> dict:
 
     In case of error, raises an unhelpful exception for now."""
     r = requests.get(BASE_URL + endpoint)
-    # For illustration only, rely on logging in the future
-    print("Getting: " + endpoint)
+    logger.debug("Getting endpoint: %s", endpoint)
     if r.status_code is not 200:
         raise Exception()
     d = r.json()
