@@ -53,7 +53,6 @@ def is_potential_invite(player):
 
 if __name__ == '__main__':
     inviteds = read_invited()
-    print(inviteds)
     new_inviteds = []
 
     # Get and filter Brazilian players
