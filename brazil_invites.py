@@ -58,8 +58,6 @@ if __name__ == '__main__':
     # Get and filter Brazilian players
     brazil = chesscom.lookup_country('BR')
     for player in brazil.players():
-        if player.username() in inviteds:
-            print("User {} found".format(player.username()))
         if player.username() not in inviteds and is_potential_invite(player):
             new_inviteds.append(player)
 
